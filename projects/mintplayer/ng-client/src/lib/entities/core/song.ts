@@ -11,6 +11,7 @@ export interface Song extends Subject {
     text: string;
     youtubeId: string;
     dailymotionId: string;
+    vimeoId: string;
     playerInfo: PlayerInfo;
     description: string;
 
