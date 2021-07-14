@@ -30,6 +30,9 @@ export class AccountService {
   public currentUser() {
     return this.httpClient.get<User>(`${this.baseUrl}/web/${this.apiVersion}/Account/current-user`).toPromise();
   }
+  public hasPassword() {
+    return this.httpClient.get<boolean>(`${this.baseUrl}/web/${this.apiVersion}/Account/has-password`).toPromise();
+  }
   public currentRoles() {
     return this.httpClient.get<string[]>(`${this.baseUrl}/web/${this.apiVersion}/Account/roles`).toPromise();
   }
