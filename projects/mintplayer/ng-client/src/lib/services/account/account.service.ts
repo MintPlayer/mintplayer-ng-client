@@ -15,6 +15,9 @@ export class AccountService {
   public register(data: UserData) {
     return this.httpClient.post(`${this.baseUrl}/web/${this.apiVersion}/Account/register`, data).toPromise();
   }
+  public resendConfirmationEmail(email: string) {
+    return this.httpClient.post(`${this.baseUrl}/web/${this.apiVersion}/Account/verify/resend`, { email }).toPromise();
+  }
   public login(email: string, password: string) {
     return this.httpClient.post<LoginResult>(`${this.baseUrl}/web/${this.apiVersion}/Account/login`, { email, password }).toPromise();
   }
