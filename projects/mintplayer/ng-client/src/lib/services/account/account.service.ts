@@ -33,6 +33,11 @@ export class AccountService {
   public hasPassword() {
     return this.httpClient.get<boolean>(`${this.baseUrl}/web/${this.apiVersion}/Account/password`).toPromise();
   }
+  public updatePassword(currentPassword: string, newPassword: string, confirmation: string) {
+    return this.httpClient.put(`${this.baseUrl}/web/${this.apiVersion}/Account/password`, {
+      currentPassword, newPassword, confirmation
+    }).toPromise();
+  }
   public currentRoles() {
     return this.httpClient.get<string[]>(`${this.baseUrl}/web/${this.apiVersion}/Account/roles`).toPromise();
   }
