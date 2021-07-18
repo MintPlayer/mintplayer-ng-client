@@ -15,9 +15,9 @@ export class PlaylistService {
 
   public pagePlaylists(request: PaginationRequest, scope: PlaylistScope) {
     switch (scope) {
-      case PlaylistScope.My:
+      case PlaylistScope.my:
         return this.httpClient.post<PaginationResponse<Playlist>>(`${this.baseUrl}/web/${this.apiVersion}/playlist/my/page`, request).toPromise();
-      case PlaylistScope.Public:
+      case PlaylistScope.public:
         return this.httpClient.post<PaginationResponse<Playlist>>(`${this.baseUrl}/web/${this.apiVersion}/playlist/public/page`, request).toPromise();
     }
   }
@@ -28,9 +28,9 @@ export class PlaylistService {
     };
 
     switch (scope) {
-      case PlaylistScope.My:
+      case PlaylistScope.my:
         return this.httpClient.get<Playlist[]>(`${this.baseUrl}/web/${this.apiVersion}/playlist/my`, { headers }).toPromise();
-      case PlaylistScope.Public:
+      case PlaylistScope.public:
         return this.httpClient.get<Playlist[]>(`${this.baseUrl}/web/${this.apiVersion}/playlist/public`, { headers }).toPromise();
     }
   }
