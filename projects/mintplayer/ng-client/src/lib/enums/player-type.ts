@@ -1,6 +1,6 @@
 export enum PlayerType {
-    None = 0,
-    Youtube = 1,
-    DailyMotion = 2,
-    Vimeo = 3,
+    none = 0,
+    youtube = 1,
+    dailyMotion = 2,
+    vimeo = 3,
 }

@@ -1,4 +1,4 @@
 export enum PlaylistScope {
-    My = 0,
-    Public = 1
+    my = 0,
+    public = 1
 }
