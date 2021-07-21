@@ -41,6 +41,11 @@ export class AccountService {
       currentPassword, newPassword, confirmation
     }).toPromise();
   }
+  public setBypass2faForExternalLogin(setupCode: string, bypass2faForExternalLogins: boolean) {
+    this.httpClient.post<string[]>(`${this.baseUrl}/web/${this.apiVersion}/Account/two-factor-bypass`, {
+      setupCode, bypass2faForExternalLogins
+    }).toPromise();
+  }
   public currentRoles() {
     return this.httpClient.get<string[]>(`${this.baseUrl}/web/${this.apiVersion}/Account/roles`).toPromise();
   }

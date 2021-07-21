@@ -5,5 +5,6 @@ export interface User {
     userName: string;
     email: string;
     isTwoFactorEnabled: boolean;
+    bypass2faForExternalLogin: boolean;
     pictureUrl: string;
 }
