@@ -52,5 +52,8 @@ export class AccountService {
   public logout() {
     return this.httpClient.post(`${this.baseUrl}/web/${this.apiVersion}/Account/logout`, {}).toPromise();
   }
+  public csrfRefresh() {
+    return this.httpClient.post(`${this.baseUrl}/web/${this.apiVersion}/Account/csrf-refresh`, {}).toPromise();
+  }
 
 }
