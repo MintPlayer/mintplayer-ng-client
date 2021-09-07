@@ -29,12 +29,16 @@ export class SubjectService {
   }
 
   public suggest(search: string, subjects: SubjectType[]) {
-    var subjects_concat = subjects.join('-');
-    return this.httpClient.get<Subject[]>(`${this.baseUrl}/web/${this.apiVersion}/subject/search/suggest/${subjects_concat}/${search}`).toPromise();
+    return this.httpClient.post<Subject[]>(`${this.baseUrl}/web/${this.apiVersion}/subject/search/suggest`, {
+      searchTerm: search,
+      subjectTypes: subjects
+    }).toPromise();
   }
 
   public search(search: string, subjects: SubjectType[]) {
-    var subjects_concat = subjects.join('-');
-    return this.httpClient.get<SearchResults>(`${this.baseUrl}/web/${this.apiVersion}/subject/search/${subjects_concat}/${search}`).toPromise();
+    return this.httpClient.post<SearchResults>(`${this.baseUrl}/web/${this.apiVersion}/subject/search`, {
+      searchTerm: search,
+      subjectTypes: subjects
+    }).toPromise();
   }
 }
