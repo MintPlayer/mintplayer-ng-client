@@ -16,8 +16,14 @@ export class TagService {
     return this.httpClient.post<PaginationResponse<Tag>>(`${this.baseUrl}/web/${this.apiVersion}/Tag/page`, request).toPromise();
   }
 
-  public suggestTags(search: string) {
-    return this.httpClient.post<Tag[]>(`${this.baseUrl}/web/${this.apiVersion}/Tag/suggest`, { searchTerm: search }).toPromise();
+  public suggestTags(search: string, includeRelations: boolean = false) {
+    return this.httpClient.post<Tag[]>(`${this.baseUrl}/web/${this.apiVersion}/Tag/suggest`, {
+      searchTerm: search
+    }, {
+      headers: {
+        include_relations: String(includeRelations)
+      }
+    }).toPromise();
   }
 
   public searchTags(search: string) {

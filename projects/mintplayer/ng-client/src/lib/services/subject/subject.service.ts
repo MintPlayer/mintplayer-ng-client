@@ -28,17 +28,25 @@ export class SubjectService {
     return this.httpClient.get<Subject[]>(`${this.baseUrl}/web/${this.apiVersion}/subject/favorite`).toPromise();
   }
 
-  public suggest(search: string, subjects: SubjectType[]) {
+  public suggest(search: string, subjects: SubjectType[], includeRelations: boolean = false) {
     return this.httpClient.post<Subject[]>(`${this.baseUrl}/web/${this.apiVersion}/subject/search/suggest`, {
       searchTerm: search,
       subjectTypes: subjects
+    }, {
+      headers: {
+        include_relations: String(includeRelations)
+      }
     }).toPromise();
   }
 
-  public search(search: string, subjects: SubjectType[]) {
+  public search(search: string, subjects: SubjectType[], includeRelations: boolean = false) {
     return this.httpClient.post<SearchResults>(`${this.baseUrl}/web/${this.apiVersion}/subject/search`, {
       searchTerm: search,
       subjectTypes: subjects
+    }, {
+      headers: {
+        include_relations: String(includeRelations)
+      }
     }).toPromise();
   }
 }
