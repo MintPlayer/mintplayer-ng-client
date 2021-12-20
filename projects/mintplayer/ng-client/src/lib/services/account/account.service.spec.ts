@@ -42,7 +42,8 @@ describe('AccountService', () => {
       ];
 
       accountService.getProviders().then(providers => {
-        expect(providers.length).toBe(4);
+        expect(providers).toBeDefined();
+        expect(providers?.length).toBe(4);
         expect(providers).toEqual(dummyProviders);
       });
       
