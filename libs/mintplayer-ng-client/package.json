@@ -1,0 +1,18 @@
+{
+  "name": "@mintplayer/ng-client",
+  "private": false,
+  "version": "13.3.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MintPlayer/mintplayer-ng-client"
+  },
+  "peerDependencies": {
+    "@angular/common": "^13.3.0",
+    "@angular/core": "^13.3.0",
+    "guid-typescript": "^1.0.9",
+    "@mintplayer/ng-pagination": "^13.3.0"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  }
+}

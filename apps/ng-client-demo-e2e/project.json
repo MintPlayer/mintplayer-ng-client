@@ -1,0 +1,28 @@
+{
+  "root": "apps/ng-client-demo-e2e",
+  "sourceRoot": "apps/ng-client-demo-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/ng-client-demo-e2e/cypress.json",
+        "devServerTarget": "ng-client-demo:serve:development"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "ng-client-demo:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/ng-client-demo-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["ng-client-demo"]
+}
