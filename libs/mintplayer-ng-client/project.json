@@ -1,6 +1,6 @@
 {
+  "$schema": "..\\..\\node_modules\\nx\\schemas\\project-schema.json",
   "projectType": "library",
-  "root": "libs/mintplayer-ng-client",
   "sourceRoot": "libs/mintplayer-ng-client/src",
   "prefix": "mintplayer-ng-client",
   "targets": {
@@ -8,7 +8,8 @@
       "executor": "@nrwl/angular:package",
       "outputs": ["dist/libs/mintplayer-ng-client"],
       "options": {
-        "project": "libs/mintplayer-ng-client/ng-package.json"
+        "project": "libs/mintplayer-ng-client/ng-package.json",
+        "tsConfig": "libs/mintplayer-ng-client/tsconfig.lib.json"
       },
       "configurations": {
         "production": {
@@ -24,7 +25,7 @@
       "executor": "@nrwl/jest:jest",
       "outputs": ["coverage/libs/mintplayer-ng-client"],
       "options": {
-        "jestConfig": "libs/mintplayer-ng-client/jest.config.js",
+        "jestConfig": "libs/mintplayer-ng-client/jest.config.ts",
         "passWithNoTests": true
       }
     },

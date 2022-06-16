@@ -1,6 +1,6 @@
 {
+  "$schema": "..\\..\\node_modules\\nx\\schemas\\project-schema.json",
   "projectType": "application",
-  "root": "apps/ng-client-demo",
   "sourceRoot": "apps/ng-client-demo/src",
   "prefix": "mintplayer-ng-client",
   "targets": {
@@ -85,7 +85,7 @@
       "executor": "@nrwl/jest:jest",
       "outputs": ["coverage/apps/ng-client-demo"],
       "options": {
-        "jestConfig": "apps/ng-client-demo/jest.config.js",
+        "jestConfig": "apps/ng-client-demo/jest.config.ts",
         "passWithNoTests": true
       }
     }

@@ -1,5 +1,6 @@
-module.exports = {
-  displayName: 'mintplayer-ng-client',
+/* eslint-disable */
+export default {
+  displayName: 'ng-client-demo',
   preset: '../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
@@ -8,7 +9,7 @@ module.exports = {
       stringifyContentPathRegex: '\\.(html|svg)$',
     },
   },
-  coverageDirectory: '../../coverage/libs/mintplayer-ng-client',
+  coverageDirectory: '../../coverage/apps/ng-client-demo',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': 'jest-preset-angular',
   },
