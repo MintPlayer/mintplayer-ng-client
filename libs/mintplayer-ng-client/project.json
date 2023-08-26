@@ -1,15 +1,17 @@
 {
+  "name": "mintplayer-ng-client",
   "$schema": "..\\..\\node_modules\\nx\\schemas\\project-schema.json",
   "projectType": "library",
   "sourceRoot": "libs/mintplayer-ng-client/src",
   "prefix": "mintplayer-ng-client",
   "targets": {
     "build": {
-      "executor": "@nrwl/angular:package",
-      "outputs": ["dist/libs/mintplayer-ng-client"],
+      "executor": "@nx/angular:package",
+      "outputs": ["{workspaceRoot}/dist/libs/mintplayer-ng-client"],
       "options": {
         "project": "libs/mintplayer-ng-client/ng-package.json",
-        "tsConfig": "libs/mintplayer-ng-client/tsconfig.lib.json"
+        "tsConfig": "libs/mintplayer-ng-client/tsconfig.lib.json",
+        "updateBuildableProjectDepsInPackageJson": true
       },
       "configurations": {
         "production": {
@@ -22,15 +24,15 @@
       "defaultConfiguration": "production"
     },
     "test": {
-      "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/mintplayer-ng-client"],
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/libs/mintplayer-ng-client"],
       "options": {
         "jestConfig": "libs/mintplayer-ng-client/jest.config.ts",
         "passWithNoTests": true
       }
     },
     "lint": {
-      "executor": "@nrwl/linter:eslint",
+      "executor": "@nx/linter:eslint",
       "options": {
         "lintFilePatterns": [
           "libs/mintplayer-ng-client/src/**/*.ts",
