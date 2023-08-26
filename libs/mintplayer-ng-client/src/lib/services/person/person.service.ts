@@ -1,6 +1,6 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { PaginationRequest, PaginationResponse } from '@mintplayer/ng-pagination';
+import { PaginationRequest, PaginationResponse } from '@mintplayer/pagination';
 import { MINTPLAYER_BASE_URL } from '../../providers/mintplayer-base-url.provider';
 import { MINTPLAYER_API_VERSION } from '../../providers/mintplayer-api-version.provider';
 import { Person } from '../../entities/core/person';
