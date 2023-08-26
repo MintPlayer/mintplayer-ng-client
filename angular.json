@@ -1,8 +1,0 @@
-{
-  "version": 2,
-  "projects": {
-    "mintplayer-ng-client": "libs/mintplayer-ng-client",
-    "ng-client-demo": "apps/ng-client-demo",
-    "ng-client-demo-e2e": "apps/ng-client-demo-e2e"
-  }
-}
